@@ -4,11 +4,6 @@ stages:
   - runScriptConfig:
       image: maven:3-jdk-8
       shellScript: mvn clean package
-- name: 登录harbor
-  steps:
-  - runScriptConfig:
-      image: golang:1.11
-      shellScript: docker login -u admin -p 123456 harbor.mobilemd.cn
 - name: 生成并推送镜像
   steps:
   - publishImageConfig:
