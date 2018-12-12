@@ -1,5 +1,5 @@
-FROM harbor.taimei.com/taimei/alpine-oraclejdk8:latest
-
+#FROM harbor.taimei.com/taimei/alpine-oraclejdk8:latest
+FROM tomcat
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
