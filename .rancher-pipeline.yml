@@ -6,7 +6,7 @@ stages:
       buildContext: .
       tag: hello-world:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: harbor.taimei.com/taimei
+      registry: harbor.mobilemd.cn/taimei
 - name: deployment
   steps:
   - applyYamlConfig:
