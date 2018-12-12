@@ -1,4 +1,4 @@
-FROM harbor.mobilemd.cn/taimei/alpine-oraclejdk8:latest
+FROM harbor.mobilemd.cn/baseimg/alpine-oraclejdk8:latest
 
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
