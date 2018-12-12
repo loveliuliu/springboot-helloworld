@@ -5,7 +5,6 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: hello-world:${CICD_EXECUTION_SEQUENCE}
-      pushRemote: true
       registry: harbor.mobilemd.cn/taimei
 - name: deployment
   steps:
