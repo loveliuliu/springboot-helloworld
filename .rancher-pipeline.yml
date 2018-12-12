@@ -3,17 +3,5 @@ stages:
   steps:
   - runScriptConfig:
       image: maven:3-jdk-8
-      shellScript: mvn clean install package
-- name: 生成并推送镜像
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: hello-world:${CICD_EXECUTION_SEQUENCE}
-      pushRemote: true
-      registry: harbor.mobilemd.cn
-- name: 部署
-  steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
+      shellScript: mvn clean deploy -B -e -U
 timeout: 60
