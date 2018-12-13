@@ -2,7 +2,7 @@ stages:
 - name: 生成jar
   steps:
   - runScriptConfig:
-      image: maven:3-jdk-8
+      image: harbor.mobilemd.cn/baseimg/baseimg-maven:latest
       shellScript: mvn clean package
 - name: 生成并推送镜像
   steps:
