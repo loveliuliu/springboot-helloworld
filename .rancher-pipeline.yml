@@ -9,7 +9,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: /baseimg/hello-world-springboot:${CICD_EXECUTION_SEQUENCE}
+      tag: baseimg/hello-world-springboot:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: harbor.mobilemd.cn
 - name: 部署
