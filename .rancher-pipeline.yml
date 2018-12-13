@@ -1,13 +1,18 @@
 stages:
-- name: build&compile
+- name: 生成jar
+  steps:
+  - runScriptConfig:
+      image: harbor.mobilemd.cn/baseimg/baseimg-maven:latest
+      shellScript: mvn clean package
+- name: 生成并推送镜像
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: hello-world:${CICD_EXECUTION_SEQUENCE}
+      tag: baseimg/hello-world-springboot:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
-      registry: harbor.mobilemd.cn/taimei
-- name: deployment
+      registry: harbor.mobilemd.cn
+- name: 部署
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
