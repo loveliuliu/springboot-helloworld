@@ -1,7 +1,5 @@
 FROM harbor.mobilemd.cn/baseimg/springboot-maven3-centos:latest
 
-RUN docker login -u admin -p 123456 harbor.mobilemd.cn
-
 ENV WORK_HOME /usr/lib/tomcat/apache-tomcat
 ENV PATH $WORK_HOME:$PATH
 ENV JAR_NAME springboot-1.5.18.RELEASE.jar
